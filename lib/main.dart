@@ -42,13 +42,12 @@ class MyApp extends StatelessWidget {
         BlocProvider<RoomCubit>(
           create: (context) => RoomCubit(),
         ),
-
       ],
       child: MaterialApp(
         title: 'SupaChat',
         debugShowCheckedModeBanner: false,
         theme: appTheme,
-        home: SplashPage(), // Set the home screen to MapScreen
+        home: MapScreen(), // Set the home screen to MapScreen
       ),
     );
   }
