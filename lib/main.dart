@@ -6,6 +6,8 @@ import 'package:extras2/cubits/profiles/profiles_cubit.dart';
 import 'package:extras2/utils/constants.dart';
 import 'package:extras2/pages/splash_page.dart';
 import 'package:extras2/main_app/map.dart';
+import 'package:extras2/cubits/rooms/rooms_cubit.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,12 +39,16 @@ class MyApp extends StatelessWidget {
         BlocProvider<ProfilesCubit>(
           create: (context) => ProfilesCubit(),
         ),
+        BlocProvider<RoomCubit>(
+          create: (context) => RoomCubit(),
+        ),
+
       ],
       child: MaterialApp(
         title: 'SupaChat',
         debugShowCheckedModeBanner: false,
         theme: appTheme,
-        home: MapScreen(), // Set the home screen to MapScreen
+        home: SplashPage(), // Set the home screen to MapScreen
       ),
     );
   }
